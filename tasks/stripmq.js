@@ -27,7 +27,7 @@ module.exports = function (grunt) {
                 var result = stripMq(input, options);
 
                 if(options.cleanCss) {
-                    result = new CleanCss(options.cleanCss).minify(result);
+                    result = new CleanCss(options.cleanCss).minify(result).styles;
                 }
 
                 grunt.file.write(f.dest, result);
